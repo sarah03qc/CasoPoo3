@@ -1,0 +1,140 @@
+{   
+    "Plant" : [
+    
+    {
+        "Type" : "Tomate",
+        
+        "dayInseconds" : 2,
+        
+        "lifeExpectancyMonths" : 3,   
+          
+        "Stage" : 0, 
+        "stagesQuantity" : 3,
+        
+        "WaterReqMin" : 5,
+        "WaterReqMax" : 90,
+        "WpositiveEffect" : 5,
+        "WnegativeEffect" : 5,
+        "waterRiegoQuantity" : 10,
+        
+        "SunReqMin" : 20,
+        "SunReqMax" : 50,
+        "SpositiveEffect" : 5,
+        "SnegativeEffect" : 5,  
+        
+        "FertilizerReqMin" : 5,
+        "FertilizerReqMax" : 90,
+        "FpositiveEffect" : 5,
+        "FnegativeEffect" : 5,
+        "fertilAbonoQuantity" : 10,
+        
+        "estados" : [{"tipo" : "bueno", 
+                      "lifepointsFrom" : 70,
+                      "lifepointsTo" : 100,
+                      "link" : "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/how-to-grow-tomatoes-hero.jpg"},
+                      
+                      {"tipo" : "medio", 
+                      "lifepointsFrom" : 30,
+                      "lifepointsTo" : 70,
+                      "link" : "https://previews.123rf.com/images/tmsara/tmsara1808/tmsara180800226/107595160-tomatoes-on-plant-with-disease-rotten-tomatoes-in-the-vegetable-garden.jpg"},
+                      
+                      {"tipo" : "malo",
+                      "lifepointsFrom" : 0,
+                      "lifepointsTo" : 30,
+                       "link" : "https://agriculturers.com/wp-content/uploads/2016/07/tomate-podrido.jpg"}
+        ]
+                  
+    },
+    
+    {
+        "Type" : "Tulipan",
+        
+        "dayInseconds" : 5,
+        
+        "lifeExpectancyMonths" : 5,    
+          
+        "Stage" : 0, 
+        "stagesQuantity" : 3,
+        
+        "WaterReqMin" : 5,
+        "WaterReqMax" : 90,
+        "WpositiveEffect" : 7,
+        "WnegativeEffect" : 7,
+        "waterRiegoQuantity" : 10,
+        
+        "SunReqMin" : 20,
+        "SunReqMax" : 50,
+        "SpositiveEffect" : 7,
+        "SnegativeEffect" : 7,  
+        
+        "FertilizerReqMin" : 5,
+        "FertilizerReqMax" : 90,
+        "FpositiveEffect" : 7,
+        "FnegativeEffect" : 7,
+        "fertilAbonoQuantity" : 10,
+        
+        
+        "estados" : [{"tipo" : "bueno", 
+                      "lifepointsFrom" : 70,
+                      "lifepointsTo" : 100,
+                      "link" : "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/how-to-grow-tomatoes-hero.jpg"},
+                      
+                      {"tipo" : "medio", 
+                      "lifepointsFrom" : 30,
+                      "lifepointsTo" : 70,
+                      "link" : "https://previews.123rf.com/images/tmsara/tmsara1808/tmsara180800226/107595160-tomatoes-on-plant-with-disease-rotten-tomatoes-in-the-vegetable-garden.jpg"},
+                      
+                      {"tipo" : "malo",
+                      "lifepointsFrom" : 0,
+                      "lifepointsTo" : 30,
+                       "link" : "https://agriculturers.com/wp-content/uploads/2016/07/tomate-podrido.jpg"}
+        ]
+    }
+    ],
+    
+        
+     "Season": [
+    
+        {
+            "Name" : "Spring",
+            "startMonth": 3,
+            "endMonth": 5,
+            "solMin" : 15,
+            "solMax" : 30,
+            "precipitacionMin" : 0,
+            "precipitacionMax" : 20
+            },
+ 
+        {
+            "Name" : "Summer", 
+            "startMonth": 6,
+            "endMonth": 8,
+            "solMin" : 20,
+            "solMax" : 40,
+            "precipitacionMin" : 0,
+            "precipitacionMax" : 10
+            },
+ 
+ 
+        {
+            "Name" : "Fall", 
+            "startMonth": 9,
+            "endMonth": 11,
+            "solMin" : 10,
+            "solMax" : 25,
+            "precipitacionMin" : 0,
+            "precipitacionMax" : 50
+            },
+        
+ 
+        {
+            "Name" : "Winter",
+            "startMonth": 12,
+            "endMonth": 2,
+            "solMin" : 5,
+            "solMax" : 15,
+            "precipitacionMin" : 1,
+            "precipitacionMax" : 60
+        }
+     ]
+}
