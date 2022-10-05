@@ -2,7 +2,6 @@ package casoPOO;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.json.simple.parser.ParseException;
 
 public class GardenMain {
@@ -30,5 +29,6 @@ public class GardenMain {
 		SeasonManager epoca = new SeasonManager();
 		epoca.checkSeason(time.getDate());
 		System.out.println(epoca.getCurrentSeason());
+		epoca.changeClimate();
 	}
 }
