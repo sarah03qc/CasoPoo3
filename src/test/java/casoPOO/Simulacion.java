@@ -1,13 +1,15 @@
 package casoPOO;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.json.simple.parser.ParseException;
 
 public class Simulacion extends Thread {
 	
 	private int IDplantType;
+	private PlantManager planta;
+	private TimeManager tiempo;
+	private SeasonManager temporada;
+	private int diesWhenLifeIs;
 	
 	Simulacion(int pIDplantType) {
 		IDplantType = pIDplantType;
@@ -20,13 +22,17 @@ public class Simulacion extends Thread {
 		
 		try {
 			
-			PlantManager planta;
 			planta = new PlantManager(IDplantType);
-			TimeManager tiempo = new TimeManager(planta);
-			SeasonManager temporada = new SeasonManager();
+			tiempo = new TimeManager(planta);
+			temporada = new SeasonManager();
 			
+			diesWhenLifeIs = ((Long) planta.getJSONPlant().get("diesWhenLifeIs")).intValue(); //se saca de JSON el valor de vida de cuando muere
 			
-			while(planta.getLifepoints() > 0) {
+			Graficar grafico = new Graficar(temporada, tiempo, planta);
+			
+			while(planta.getLifepoints() > diesWhenLifeIs) {
+				
+				tiempo.passOneday(this);  //adentro de esto se usa el hilo y los detalles de fecha y tiempo
 				
 				System.out.println("Fecha: " + tiempo.getDate());
 				System.out.println("Hora: " + tiempo.getTime());
@@ -37,20 +43,21 @@ public class Simulacion extends Thread {
 				
 				planta.abonar();
 				planta.regar();
+				planta.takeNutrientesAbono();
+				planta.takeNutrientesAgua();
 				
-				planta.checkFertilizer();
 				planta.checkSun(temporada);
+				planta.checkFertilizer();
 				planta.checkWater(temporada);
 				
-				System.out.println("Vida en: " + planta.getLifepoints());
+				System.out.println("Abono en: " + planta.getFertilpoints());
+				System.out.println("Agua en: " + planta.getWaterpoints());
 				
-				tiempo.passOneday(this);  //adentro de esto se usa el hilo y los detalles de fecha y tiempo
-			
+				System.out.println("Vida en: " + planta.getLifepoints());
 			}
+			planta.morir();
 		} catch(IOException | InterruptedException | ParseException e) {
 			System.out.println("Excepcion ha ocurrido: " + e);
 		}
 	}
 }
-			
-		

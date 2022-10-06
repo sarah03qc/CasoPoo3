@@ -7,14 +7,11 @@ import org.json.simple.parser.ParseException;
 public class PlantManager extends Planta {
 	
 	private JSONObject JSONPlant;
-	private int lifepoints = 100; 
 
 	PlantManager(int plantNumber) throws FileNotFoundException, IOException, ParseException {
 		super(plantNumber); 
-		
 		JSONPlant = this.getJSONPlant(); //tomamos el tipo de planta en JSON de la clase padre
 	}
-	
 	public void checkFertilizer() {
 		//hay que comparar el nivel actual de fertilizante y si se pasa del rango estipulado en JSON
 		//van a ocurrir las consecuencias negativas que dice el JSON, si no se pasa, ocurren las consecuancias positivas que 
@@ -28,13 +25,13 @@ public class PlantManager extends Planta {
 		
 		if(FertilizerReqMin <= this.getFertilpoints() && this.getFertilpoints() <= FertilizerReqMax) {
 			//caso positivo
-			if(lifepoints + FpositiveEffect <= 100) {
-				lifepoints = lifepoints + FpositiveEffect;  //que no se pase de 100, que siempre es el maximo para medir la vida 
+			if(this.getLifepoints() + FpositiveEffect <= 100) {
+				this.setLifepoints(this.getLifepoints() + FpositiveEffect);  //que no se pase de 100, que siempre es el maximo para medir la vida 
 			}
 		} else {
 			//caso negativo
-			if(lifepoints - FnegativeEffect >= 0) {
-				lifepoints = lifepoints - FnegativeEffect;  //que no de en numeros negativos
+			if(this.getLifepoints() - FnegativeEffect >= 0) {
+				this.setLifepoints(this.getLifepoints() - FnegativeEffect);  //que no de en numeros negativos
 			}
 		}
 	}
@@ -50,13 +47,13 @@ public class PlantManager extends Planta {
 		
 		if(SunReqMin <= temporada.getSunLevel() && temporada.getSunLevel() <= SunReqMax) {
 			//caso positivo
-			if(lifepoints + SpositiveEffect <= 100) {
-				lifepoints = lifepoints + SpositiveEffect;  //que no se pase de 100, que siempre es el maximo para medir la vida 
+			if(this.getLifepoints() + SpositiveEffect <= 100) {
+				this.setLifepoints(this.getLifepoints() + SpositiveEffect);  //que no se pase de 100, que siempre es el maximo para medir la vida 
 			}
 		} else {
 			//caso negativo
-			if(lifepoints - SnegativeEffect >= 0) {
-				lifepoints = lifepoints - SnegativeEffect;  //que no de en numeros negativos
+			if(this.getLifepoints() - SnegativeEffect >= 0) {
+				this.setLifepoints(this.getLifepoints() - SnegativeEffect);  //que no de en numeros negativos
 			}
 		}
 	}
@@ -75,17 +72,14 @@ public class PlantManager extends Planta {
 		
 		if(WaterReqMin <= aguaTotal && aguaTotal <= WaterReqMax) {
 			//caso positivo
-			if(lifepoints + WpositiveEffect <= 100) {
-				lifepoints = lifepoints + WpositiveEffect;  //que no se pase de 100, que siempre es el maximo para medir la vida 
+			if(this.getLifepoints() + WpositiveEffect <= 100) {
+				this.setLifepoints(this.getLifepoints() + WpositiveEffect);  //que no se pase de 100, que siempre es el maximo para medir la vida 
 			}
 		} else {
 			//caso negativo
-			if(lifepoints - WnegativeEffect >= 0) {
-				lifepoints = lifepoints - WnegativeEffect;  //que no de en numeros negativos
+			if(this.getLifepoints() - WnegativeEffect >= 0) {
+				this.setLifepoints(this.getLifepoints() - WnegativeEffect);  //que no de en numeros negativos
 			}
 		}
-	}
-	public int getLifepoints() {
-		return lifepoints;
 	}
 }

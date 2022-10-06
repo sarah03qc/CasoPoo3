@@ -4,7 +4,9 @@
     {
         "Type" : "Tomate",
         
-        "dayInseconds" : 5,
+        "dayInseconds" : 1,
+        
+        "diesWhenLifeIs" : 0,
         
         "lifeExpectancyMonths" : 3,   
           
@@ -16,6 +18,7 @@
         "WpositiveEffect" : 5,
         "WnegativeEffect" : 5,
         "waterRiegoQuantity" : 10,
+        "waterConsumoPerDay" : 6,
         
         "SunReqMin" : 20,
         "SunReqMax" : 50,
@@ -26,7 +29,8 @@
         "FertilizerReqMax" : 90,
         "FpositiveEffect" : 5,
         "FnegativeEffect" : 5,
-        "fertilAbonoQuantity" : 10,
+        "fertilAbonoQuantity" : 7,
+        "fertilConsumoPerDay" : 5,
         
         "estados" : [{"tipo" : "bueno", 
                       "lifepointsFrom" : 70,
@@ -51,6 +55,8 @@
         
         "dayInseconds" : 5,
         
+        "diesWhenLifeIs" : 0,
+        
         "lifeExpectancyMonths" : 5,    
           
         "Stage" : 0, 
@@ -61,6 +67,7 @@
         "WpositiveEffect" : 7,
         "WnegativeEffect" : 7,
         "waterRiegoQuantity" : 10,
+        "waterConsumoPerDay" : 6,
         
         "SunReqMin" : 20,
         "SunReqMax" : 50,
@@ -72,6 +79,7 @@
         "FpositiveEffect" : 7,
         "FnegativeEffect" : 7,
         "fertilAbonoQuantity" : 10,
+        "fertilConsumoPerDay" : 6,
         
         
         "estados" : [{"tipo" : "bueno", 

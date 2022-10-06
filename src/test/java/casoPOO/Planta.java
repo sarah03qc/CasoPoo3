@@ -12,6 +12,7 @@ public class Planta {
 	private JSONObject estaPlanta;
 	private int pointswater = 0;
 	private int pointsfertil = 0;
+	private int lifepoints = 100; 
 	
 	Planta(int plantNumber) throws FileNotFoundException, IOException, ParseException {
 		//constructor que toma la planta y sus reglas del menu, que a su vez toma los tipos del JSON
@@ -31,8 +32,7 @@ public class Planta {
 				}
 			}
 		}
-	}
-		
+	}	
 	public void abonar() throws FileNotFoundException, IOException, ParseException {
 
 		int abonoQuantity = ((Long) estaPlanta.get("fertilAbonoQuantity")).intValue();  //tomamos del json la cantidad que se agrega al abonar
@@ -44,6 +44,22 @@ public class Planta {
 		int riegoQuantity = ((Long) estaPlanta.get("waterRiegoQuantity")).intValue();  //tomamos del json la cantidad que se agrega al regar
 		pointswater = pointswater + riegoQuantity;     //se agrega el agua que se pide en el json
 	    }
+	public void takeNutrientesAbono() {
+		//es para consumir lo que el JSON dice que se consume diario de fertilizer
+		int fertilConsumoPerDay = ((Long) estaPlanta.get("fertilConsumoPerDay")).intValue();
+		pointsfertil = pointsfertil - fertilConsumoPerDay;   //se consume
+	}
+	public void takeNutrientesAgua() {
+		//es para consumir lo que el JSON dice que se consume diario de agua
+		int waterConsumoPerDay = ((Long) estaPlanta.get("waterConsumoPerDay")).intValue();
+		pointswater = pointswater - waterConsumoPerDay;   //se consume
+	}
+	public void morir() {
+		System.out.println("PLANTA HA FALLECIDO");
+		int diesWhenLifeIs = ((Long) estaPlanta.get("diesWhenLifeIs")).intValue();  //tomamos del JSON el valor de vida con el que se muere
+		System.out.println("Vida en " + diesWhenLifeIs);
+		lifepoints = diesWhenLifeIs;
+	}
 	public JSONObject getJSONPlant() {
 		return estaPlanta;
 	}
@@ -52,5 +68,11 @@ public class Planta {
 	}
 	public int getFertilpoints() {
 		return pointsfertil;
+	}
+	public void setLifepoints(int value) {
+		lifepoints = value;
+	}
+	public int getLifepoints() {
+		return lifepoints;
 	}
 }

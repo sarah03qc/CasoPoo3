@@ -8,8 +8,14 @@ public class GardenMain {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException, InterruptedException {
 		
-		Simulacion simulacion1 = new Simulacion(0);
+		//Simulacion simulacion1 = new Simulacion(0);
 		
-		simulacion1.start();
+		//simulacion1.start();
+		
+		//MENU YA SE CAMBIO A MAP PARA TOMAR EL JSON EN UN MAP, FALTA ACONDICIONAR EL RESTO DE CLASES A ESTE CAMBIO
+		//PARA QUE YA NO ACCEDAN DIRECTAMENTE AL JSON
+		
+		MapJSON map = new MapJSON();
+		
 	}
 }
