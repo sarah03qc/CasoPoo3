@@ -39,8 +39,10 @@ public class TimeManager {
 	public LocalDate getDate() {
 		return fecha;
 	}
-	
 	public LocalTime getTime() {
 		return time;
+	}
+	public int getDaysPassed() {
+		return diasPasados;
 	}
 }

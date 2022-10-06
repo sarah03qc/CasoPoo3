@@ -12,6 +12,7 @@ public class SeasonManager extends Season {
 	private int mes;
 	private int niveldeLluvia;
 	private int niveldeSol;
+	private String currentSeason;
 	private JSONObject actualEpoca;
 	
 	SeasonManager() throws FileNotFoundException, IOException, ParseException {
@@ -54,5 +55,8 @@ public class SeasonManager extends Season {
 	}
 	public int getSunLevel() {
 		return niveldeSol;
+	}
+	public String getCurrentSeason() {
+		return currentSeason;
 	}
 }

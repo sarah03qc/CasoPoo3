@@ -4,7 +4,7 @@
     {
         "Type" : "Tomate",
         
-        "dayInseconds" : 2,
+        "dayInseconds" : 5,
         
         "lifeExpectancyMonths" : 3,   
           

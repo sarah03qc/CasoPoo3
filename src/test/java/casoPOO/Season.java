@@ -13,7 +13,6 @@ import org.json.simple.parser.ParseException;
 public class Season {
 	
 	protected Vector<JSONObject> seasons = new Vector<JSONObject>();  //vector que tendra todos los objetos seasons sacadas del json
-	protected String currentSeason;
 	
 	Season() throws FileNotFoundException, IOException, ParseException {
 		//constructor donde se toma el array season del JSON
@@ -32,9 +31,5 @@ public class Season {
 	  
 	public Vector<JSONObject> getSeasons() {
 		return seasons;
-	}
-	public String getCurrentSeason() {
-		return currentSeason;
-		
 	}
 }
