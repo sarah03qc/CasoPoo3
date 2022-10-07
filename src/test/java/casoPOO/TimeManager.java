@@ -2,7 +2,6 @@ package casoPOO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import org.json.simple.JSONObject;
 
 public class TimeManager {
 	
@@ -17,9 +16,7 @@ public class TimeManager {
 		time = LocalTime.now();
 		fecha = LocalDate.now();	
 		
-		//la planta es parametro para acceder al JSONObject que la representa y tomar lo que es un dia en segundos segun el json
-		JSONObject laPlanta = plant.getJSONPlant();
-		diaEnSegundos = ((Long) laPlanta.get("dayInseconds")).intValue(); 
+		diaEnSegundos = plant.getDayInseconds();
 	}
 	
 	public void passOneday(Thread hilo) throws InterruptedException {

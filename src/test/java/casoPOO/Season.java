@@ -1,35 +1,55 @@
 package casoPOO;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Vector;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 public class Season {
 	
-	protected Vector<JSONObject> seasons = new Vector<JSONObject>();  //vector que tendra todos los objetos seasons sacadas del json
+	private String Name;
+	private int startMonth;
+	private int endMonth;
+	private int solMin;
+	private int solMax;
+	private int precipitacionMin;
+	private int precipitacionMax;
 	
-	Season() throws FileNotFoundException, IOException, ParseException {
-		//constructor donde se toma el array season del JSON
-		
-		Object obj = new JSONParser().parse(new FileReader(".\\src/test/java\\casoPOO\\virtualgarden.json"));
-		JSONObject jo = (JSONObject) obj;
-		JSONArray jsonArray = (JSONArray) jo.get("Season");
-		
-		//Iterando por el array del json
-		for (int i = 0; i < jsonArray.size(); ++i) {
-		    JSONObject temp = (JSONObject) jsonArray.get(i);
-		    //agregamos el JSONObject season al vector seasons
-			seasons.add(temp); 
-		}
+	public String getName() {
+		return Name;
 	}
-	  
-	public Vector<JSONObject> getSeasons() {
-		return seasons;
+	public void setName(String name) {
+		Name = name;
+	}
+	public int getStartMonth() {
+		return startMonth;
+	}
+	public void setStartMonth(int startMonth) {
+		this.startMonth = startMonth;
+	}
+	public int getEndMonth() {
+		return endMonth;
+	}
+	public void setEndMonth(int endMonth) {
+		this.endMonth = endMonth;
+	}
+	public int getSolMin() {
+		return solMin;
+	}
+	public void setSolMin(int solMin) {
+		this.solMin = solMin;
+	}
+	public int getSolMax() {
+		return solMax;
+	}
+	public void setSolMax(int solMax) {
+		this.solMax = solMax;
+	}
+	public int getPrecipitacionMin() {
+		return precipitacionMin;
+	}
+	public void setPrecipitacionMin(int precipitacionMin) {
+		this.precipitacionMin = precipitacionMin;
+	}
+	public int getPrecipitacionMax() {
+		return precipitacionMax;
+	}
+	public void setPrecipitacionMax(int precipitacionMax) {
+		this.precipitacionMax = precipitacionMax;
 	}
 }

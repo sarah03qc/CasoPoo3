@@ -3,6 +3,10 @@ package casoPOO;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -10,6 +14,15 @@ public class Graficar {
 	
 	private JFrame frame;
 	private JLabel label;
+	private Label seasonlabel;
+	private Label templabel;
+	private Label rainlabel;
+	private Label dayslabel;
+	private Label datelabel;
+	private Label waterlabel;
+	private Label fertlabel;
+	private Label lifelabel;
+	private CheckStatusForImage actualizarImagen;
 	
 	Graficar(SeasonManager season, TimeManager time, PlantManager plant) {
 		frame = new JFrame("Virtual Garden");
@@ -18,22 +31,41 @@ public class Graficar {
 		frame.setSize(new Dimension(950, 800));
 		
 		frame.setLayout(new FlowLayout(FlowLayout.RIGHT, 50, 50));
-		Label seasonlabel = new Label("Temporada: " + season.getCurrentSeason());
+		seasonlabel = new Label("Temporada: " + season.getCurrentSeason());
         frame.add(seasonlabel);
-        Label templabel = new Label("Sun level: " + season.getSunLevel());
+        templabel = new Label("Sun level: " + season.getSunLevel());
         frame.add(templabel);
-        Label rainlabel = new Label("Rain level: " + season.getRainLevel());
+        rainlabel = new Label("Rain level: " + season.getRainLevel());
         frame.add(rainlabel);
-        Label dayslabel = new Label("Days passed: " + 0);
+        dayslabel = new Label("Days passed: " + 0);
         frame.add(dayslabel);
-        Label datelabel = new Label("Date: " + time.getDate());
+        datelabel = new Label("Date: " + time.getDate());
         frame.add(datelabel);
-        Label waterlabel = new Label("Water: " + plant.getWaterpoints());
+        waterlabel = new Label("Water: " + plant.getWaterpoints());
         frame.add(waterlabel);
-        Label fertlabel = new Label("Fertilizer: " + plant.getFertilpoints());
+        fertlabel = new Label("Fertilizer: " + plant.getFertilpoints());
         frame.add(fertlabel);
-        Label lifelabel = new Label("Life: " + plant.getLifepoints());
+        lifelabel = new Label("Life level: " + plant.getLifepoints());
         frame.add(lifelabel);
+        
+        JButton abonar = new JButton("Abonar");
+        abonar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+               plant.abonar(); 
+            }
+        });
+        frame.add(abonar);
+        JButton regar = new JButton("Regar");
+        regar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+               plant.regar(); 
+            }
+        });
+        frame.add(regar);  
+        
+        actualizarImagen = new CheckStatusForImage(plant);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(label);
@@ -43,5 +75,16 @@ public class Graficar {
 	
 	public void displayNewValues(SeasonManager season, TimeManager time, PlantManager plant) {
 		//aun no esta hecha, pero este metodo es para actualizar los valores cambiantes dentro del ciclo de vida
+		
+		actualizarImagen.check(frame, label);
+		
+		seasonlabel.setText("Temporada: " + season.getCurrentSeason());
+		templabel.setText("Sun level: " + season.getSunLevel());
+		rainlabel.setText("Rain level: " + season.getRainLevel());
+		dayslabel.setText("Days passed: " + time.getDaysPassed());
+		datelabel.setText("Date: " + time.getDate());
+		waterlabel.setText("Water: " + plant.getWaterpoints());
+		fertlabel.setText("Fertilizer: " + plant.getFertilpoints());
+		lifelabel.setText("Life level: " + plant.getLifepoints());
 	}
 }

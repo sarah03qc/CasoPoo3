@@ -4,11 +4,11 @@
     {
         "Type" : "Tomate",
         
-        "dayInseconds" : 1,
+        "dayInseconds" : 2,
         
         "diesWhenLifeIs" : 0,
         
-        "lifeExpectancyMonths" : 3,   
+        "lifeExpectancyDays" : 90,   
           
         "Stage" : 0, 
         "stagesQuantity" : 3,
@@ -57,7 +57,7 @@
         
         "diesWhenLifeIs" : 0,
         
-        "lifeExpectancyMonths" : 5,    
+        "lifeExpectancyDays" : 90,    
           
         "Stage" : 0, 
         "stagesQuantity" : 3,
@@ -105,8 +105,8 @@
     
         {
             "Name" : "Spring",
-            "startMonth": 3,
-            "endMonth": 5,
+            "startMonth": 1,
+            "endMonth": 3,
             "solMin" : 15,
             "solMax" : 30,
             "precipitacionMin" : 0,
@@ -115,8 +115,8 @@
  
         {
             "Name" : "Summer", 
-            "startMonth": 6,
-            "endMonth": 8,
+            "startMonth": 4,
+            "endMonth": 6,
             "solMin" : 20,
             "solMax" : 40,
             "precipitacionMin" : 0,
@@ -126,8 +126,8 @@
  
         {
             "Name" : "Fall", 
-            "startMonth": 9,
-            "endMonth": 11,
+            "startMonth": 7,
+            "endMonth": 9,
             "solMin" : 10,
             "solMax" : 25,
             "precipitacionMin" : 0,
@@ -137,8 +137,8 @@
  
         {
             "Name" : "Winter",
-            "startMonth": 12,
-            "endMonth": 2,
+            "startMonth": 10,
+            "endMonth": 12,
             "solMin" : 5,
             "solMax" : 15,
             "precipitacionMin" : 1,

@@ -3,10 +3,10 @@ package casoPOO;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -14,7 +14,7 @@ import org.json.simple.parser.ParseException;
 public class MapJSON {
 	//clase que toma del json el array de tipos distintos de plantas y las pone en un vector llamado menu
 	
-	private Map<String, JSONArray> mapa = new HashMap<String, JSONArray>(); //mapa donde se cargara el JSON
+	private Map<String, ArrayList<JSONObject>> mapa = new HashMap<String, ArrayList<JSONObject>>(); //mapa donde se cargara el JSON
 	
 	@SuppressWarnings("unchecked")
 	MapJSON() throws FileNotFoundException, IOException, ParseException {
@@ -28,14 +28,12 @@ public class MapJSON {
 		Iterator<String> iterador = jo.keySet().iterator();
 		while(iterador.hasNext()) {
 			String key = iterador.next();
-			mapa.put(key, (JSONArray) jo.get(nombres[contador]));
+			mapa.put(key, (ArrayList<JSONObject>) jo.get(nombres[contador]));
 			contador++;
 		}
-		System.out.println(mapa.keySet());
-		System.out.println(mapa.values());
 	}
 	
-	public Map<String, JSONArray> getJSONMap() {
+	public Map<String, ArrayList<JSONObject>> getJSONMap() {
 		return mapa;
 	}
 }

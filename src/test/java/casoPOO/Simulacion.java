@@ -26,13 +26,17 @@ public class Simulacion extends Thread {
 			tiempo = new TimeManager(planta);
 			temporada = new SeasonManager();
 			
-			diesWhenLifeIs = ((Long) planta.getJSONPlant().get("diesWhenLifeIs")).intValue(); //se saca de JSON el valor de vida de cuando muere
+			diesWhenLifeIs = planta.getDiesWhenLifeIs(); //el valor de vida de cuando muere
 			
 			Graficar grafico = new Graficar(temporada, tiempo, planta);
 			
-			while(planta.getLifepoints() > diesWhenLifeIs) {
+			while(planta.getLifepoints() > diesWhenLifeIs && tiempo.getDaysPassed() != planta.getLifeExpectancyDays()) {
+				
+				grafico.displayNewValues(temporada, tiempo, planta);
 				
 				tiempo.passOneday(this);  //adentro de esto se usa el hilo y los detalles de fecha y tiempo
+				
+				grafico.displayNewValues(temporada, tiempo, planta);
 				
 				System.out.println("Fecha: " + tiempo.getDate());
 				System.out.println("Hora: " + tiempo.getTime());
@@ -41,8 +45,6 @@ public class Simulacion extends Thread {
 				temporada.changeClimate();
 				System.out.println("Season actual: " + temporada.getCurrentSeason());
 				
-				planta.abonar();
-				planta.regar();
 				planta.takeNutrientesAbono();
 				planta.takeNutrientesAgua();
 				
@@ -54,6 +56,8 @@ public class Simulacion extends Thread {
 				System.out.println("Agua en: " + planta.getWaterpoints());
 				
 				System.out.println("Vida en: " + planta.getLifepoints());
+				
+				
 			}
 			planta.morir();
 		} catch(IOException | InterruptedException | ParseException e) {
