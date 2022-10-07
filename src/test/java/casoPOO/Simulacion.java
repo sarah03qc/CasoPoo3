@@ -60,6 +60,7 @@ public class Simulacion extends Thread {
 				
 			}
 			planta.morir();
+			grafico.displayNewValues(temporada, tiempo, planta);
 		} catch(IOException | InterruptedException | ParseException e) {
 			System.out.println("Excepcion ha ocurrido: " + e);
 		}

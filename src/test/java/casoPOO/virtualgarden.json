@@ -18,7 +18,7 @@
         "WpositiveEffect" : 5,
         "WnegativeEffect" : 5,
         "waterRiegoQuantity" : 10,
-        "waterConsumoPerDay" : 6,
+        "waterConsumoPerDay" : 5,
         
         "SunReqMin" : 20,
         "SunReqMax" : 50,
@@ -29,7 +29,7 @@
         "FertilizerReqMax" : 90,
         "FpositiveEffect" : 5,
         "FnegativeEffect" : 5,
-        "fertilAbonoQuantity" : 7,
+        "fertilAbonoQuantity" : 10,
         "fertilConsumoPerDay" : 5,
         
         "estados" : [{"tipo" : "bueno", 
@@ -53,7 +53,7 @@
     {
         "Type" : "Tulipan",
         
-        "dayInseconds" : 5,
+        "dayInseconds" : 1,
         
         "diesWhenLifeIs" : 0,
         
@@ -71,13 +71,13 @@
         
         "SunReqMin" : 20,
         "SunReqMax" : 50,
-        "SpositiveEffect" : 7,
-        "SnegativeEffect" : 7,  
+        "SpositiveEffect" : 5,
+        "SnegativeEffect" : 5,  
         
         "FertilizerReqMin" : 5,
         "FertilizerReqMax" : 90,
-        "FpositiveEffect" : 7,
-        "FnegativeEffect" : 7,
+        "FpositiveEffect" : 5,
+        "FnegativeEffect" : 5,
         "fertilAbonoQuantity" : 10,
         "fertilConsumoPerDay" : 6,
         
