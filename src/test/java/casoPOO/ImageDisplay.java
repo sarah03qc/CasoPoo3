@@ -8,11 +8,11 @@ import javax.swing.*;
  
 //despliega una imagen a traves de un link
 
-public class ImageDisplayer {
+public class ImageDisplay {
 	
 	public String direcc;
 
-    public ImageDisplayer(String link, JFrame frame, JLabel label) {
+    public ImageDisplay(String link, JFrame frame, JLabel label) {
     	
     	EventQueue.invokeLater(new Runnable() {
             @Override

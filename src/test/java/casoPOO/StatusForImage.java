@@ -3,12 +3,12 @@ package casoPOO;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class CheckStatusForImage {
+public class StatusForImage {
 	
 	private PlantManager planta;
-	private ImageDisplayer desplegador;
+	private ImageDisplay desplegador;
 	
-	CheckStatusForImage(PlantManager pplanta) {
+	StatusForImage(PlantManager pplanta) {
 		planta = pplanta;
 	}
 	
@@ -17,7 +17,7 @@ public class CheckStatusForImage {
 		for(int i = 0; i < planta.getEstados().length; i++) {
 			//hay que revisar el rango de vida establecido en cada uno 
 			if(planta.getEstados()[i].getLifepointsFrom() < planta.getLifepoints() && planta.getEstados()[i].getLifepointsTo() >= planta.getLifepoints()) {
-				desplegador = new ImageDisplayer(planta.getEstados()[i].getLink(), frame, label);
+				desplegador = new ImageDisplay(planta.getEstados()[i].getLink(), frame, label);
 			}
 		}
 	}

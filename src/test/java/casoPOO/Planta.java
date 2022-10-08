@@ -13,17 +13,14 @@ public class Planta extends PlantRules {
 	
 	Planta(int plantNumber) throws FileNotFoundException, IOException, ParseException {
 		super(plantNumber);
-		
 	}	
 	public void abonar() {
-
 		pointsfertil = pointsfertil + this.getFertilAbonoQuantity();   //se agrega el abono que se pide en el json
-		}
+	}
 	
 	public void regar() {
-		
 		pointswater = pointswater + this.getWaterRiegoQuantity();     //se agrega el agua que se pide en el json
-	    }
+	}
 	public void takeNutrientesAbono() {
 		//es para consumir lo que el JSON dice que se consume diario de fertilizer
 		pointsfertil = pointsfertil - this.getFertilConsumoPerDay();   //se consume

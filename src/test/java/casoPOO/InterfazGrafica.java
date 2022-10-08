@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Graficar {
+public class InterfazGrafica {
 	
 	private JFrame frame;
 	private JLabel label;
@@ -22,9 +22,12 @@ public class Graficar {
 	private Label waterlabel;
 	private Label fertlabel;
 	private Label lifelabel;
-	private CheckStatusForImage actualizarImagen;
+	private StatusForImage actualizarImagen;
+	private NewPlant newp;
 	
-	Graficar(SeasonManager season, TimeManager time, PlantManager plant) {
+	private int contador = 0;
+	
+	InterfazGrafica(SeasonManager season, TimeManager time, PlantManager plant) {
 		frame = new JFrame("Virtual Garden");
 		label = new JLabel();  
 		
@@ -55,7 +58,9 @@ public class Graficar {
                plant.abonar(); 
             }
         });
+           
         frame.add(abonar);
+        
         JButton regar = new JButton("Regar");
         regar.addActionListener(new ActionListener() {
             @Override
@@ -65,7 +70,21 @@ public class Graficar {
         });
         frame.add(regar);  
         
-        actualizarImagen = new CheckStatusForImage(plant);
+        actualizarImagen = new StatusForImage(plant);
+        
+        
+        while(contador < plant.getCantidadPlantTypes()) {
+        	JButton addnew = new JButton("Agregar planta de tipo " + contador);
+            addnew.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                   newp.addnew(plant, time, contador); 
+                }
+            });
+            frame.add(addnew); 	
+        	contador++;
+        }
+         
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(label);

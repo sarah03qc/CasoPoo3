@@ -28,13 +28,15 @@ public class Simulacion extends Thread {
 			
 			diesWhenLifeIs = planta.getDiesWhenLifeIs(); //el valor de vida de cuando muere
 			
-			Graficar grafico = new Graficar(temporada, tiempo, planta);
+			InterfazGrafica grafico = new InterfazGrafica(temporada, tiempo, planta);
 			
 			while(planta.getLifepoints() > diesWhenLifeIs && tiempo.getDaysPassed() != planta.getLifeExpectancyDays()) {
 				
 				grafico.displayNewValues(temporada, tiempo, planta);
 				
 				tiempo.passOneday(this);  //adentro de esto se usa el hilo y los detalles de fecha y tiempo
+				//se hace un sleep de lo que JSON nos dice que seria un dia en segundos
+			    Thread.sleep(planta.getDayInseconds() * 1000);
 				
 				grafico.displayNewValues(temporada, tiempo, planta);
 				

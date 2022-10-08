@@ -37,6 +37,8 @@ public class PlantRules {
     private int FnegativeEffect;
     private int fertilAbonoQuantity;
     private int fertilConsumoPerDay;
+    
+    private int cantidadPlantTypes = 0;
 	
     private EstadoRules estados[];
     private JSONArray estadosBeforeConversion;
@@ -49,6 +51,10 @@ public class PlantRules {
 		
 		ArrayList<JSONObject> plants = mapa.get("Plant");
 		JSONObject planta = plants.get(plantNumber);  //para que sean del tipo de planta deseado
+		
+		for (int i = 0; i < plants.size(); i++) {
+			  cantidadPlantTypes = getCantidadPlantTypes() + 1;  
+		}
 		
 		Type = (String) planta.get("Type");
 		
@@ -185,5 +191,9 @@ public class PlantRules {
 
 	public EstadoRules[] getEstados() {
 		return estados;
+	}
+
+	public int getCantidadPlantTypes() {
+		return cantidadPlantTypes;
 	}
 }
