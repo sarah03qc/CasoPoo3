@@ -77,7 +77,7 @@
         "FertilizerReqMin" : 5,
         "FertilizerReqMax" : 90,
         "FpositiveEffect" : 5,
-        "FnegativeEffect" : 5,
+        "FnegativeEffect" : 6,
         "fertilAbonoQuantity" : 10,
         "fertilConsumoPerDay" : 6,
         
@@ -85,17 +85,17 @@
         "estados" : [{"tipo" : "bueno", 
                       "lifepointsFrom" : 70,
                       "lifepointsTo" : 100,
-                      "link" : "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/how-to-grow-tomatoes-hero.jpg"},
+                      "link" : "https://s1.significados.com/foto/shutterstock-134400179_sm.jpg"},
                       
                       {"tipo" : "medio", 
                       "lifepointsFrom" : 30,
                       "lifepointsTo" : 70,
-                      "link" : "https://previews.123rf.com/images/tmsara/tmsara1808/tmsara180800226/107595160-tomatoes-on-plant-with-disease-rotten-tomatoes-in-the-vegetable-garden.jpg"},
+                      "link" : "https://images.freeimages.com/images/premium/previews/6085/6085149-wilted-beauty.jpg"},
                       
                       {"tipo" : "malo",
                       "lifepointsFrom" : 0,
                       "lifepointsTo" : 30,
-                       "link" : "https://agriculturers.com/wp-content/uploads/2016/07/tomate-podrido.jpg"}
+                       "link" : "https://img.freepik.com/fotos-premium/flor-marchita-flor-amarilla-secada-tulipan-sobre-fondo-blanco-sombra_74782-292.jpg?w=2000"}
         ]
     }
     ],

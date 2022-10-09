@@ -15,7 +15,6 @@ public class Simulacion extends Thread {
 		IDplantType = pIDplantType;
 	}
 	
-	//aca va a estar todo lo importante
 	//se van a instanciar las clases correspondientes y llamar los metodos importante, se van a conectar entre si
 	
 	public void run() {
@@ -63,6 +62,7 @@ public class Simulacion extends Thread {
 			}
 			planta.morir();
 			grafico.displayNewValues(temporada, tiempo, planta);
+			grafico.displayDeathMessage();
 		} catch(IOException | InterruptedException | ParseException e) {
 			System.out.println("Excepcion ha ocurrido: " + e);
 		}

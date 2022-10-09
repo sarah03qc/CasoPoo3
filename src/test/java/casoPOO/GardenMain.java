@@ -8,7 +8,7 @@ public class GardenMain {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException, InterruptedException {
 		
-		Simulacion simulacion1 = new Simulacion(0);
+		Simulacion simulacion1 = new Simulacion(1);
 		
 		simulacion1.start();
 	}

@@ -54,17 +54,16 @@ public class InterfazGrafica {
         JButton abonar = new JButton("Abonar");
         abonar.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(ActionEvent e) {
                plant.abonar(); 
             }
         });
-           
         frame.add(abonar);
         
         JButton regar = new JButton("Regar");
         regar.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(ActionEvent e1) {
                plant.regar(); 
             }
         });
@@ -74,17 +73,19 @@ public class InterfazGrafica {
         
         
         while(contador < plant.getCantidadPlantTypes()) {
+        	System.out.println("CANTIDAD  PLANTTYPES" + plant.getCantidadPlantTypes());
         	JButton addnew = new JButton("Agregar planta de tipo " + contador);
             addnew.addActionListener(new ActionListener() {
                 @Override
-                public void actionPerformed(ActionEvent arg0) {
-                   newp.addnew(plant, time, contador); 
+                public void actionPerformed(ActionEvent e2) {
+                	newp = new NewPlant(plant, time, contador, frame);  //para tener la posibilidad de crear planta nueva, con botones
+                	newp.addnew();
                 }
             });
             frame.add(addnew); 	
         	contador++;
         }
-         
+        contador = 0;
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(label);
@@ -105,5 +106,10 @@ public class InterfazGrafica {
 		waterlabel.setText("Water: " + plant.getWaterpoints());
 		fertlabel.setText("Fertilizer: " + plant.getFertilpoints());
 		lifelabel.setText("Life level: " + plant.getLifepoints());
+	}
+	
+	public void displayDeathMessage() {
+		Label dmessage = new Label("La planta ha fallecido");
+        frame.add(dmessage);
 	}
 }

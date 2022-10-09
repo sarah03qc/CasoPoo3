@@ -22,6 +22,9 @@ public class PlantManager extends Planta {
 			//caso negativo
 			if(this.getLifepoints() - this.getFnegativeEffect() >= 0) {
 				this.setLifepoints(this.getLifepoints() - this.getFnegativeEffect());  //que no de en numeros negativos
+			} else {
+				//como no se puede eliminar la cantidad especificada en el json de vida, porque daria negativo, simplemente se pone en cero
+				this.setLifepoints(0);
 			}
 		}
 	}
@@ -38,6 +41,9 @@ public class PlantManager extends Planta {
 			//caso negativo
 			if(this.getLifepoints() - this.getSnegativeEffect() >= 0) {
 				this.setLifepoints(this.getLifepoints() - this.getSnegativeEffect());  //que no de en numeros negativos
+			} else {
+				//como no se puede eliminar la cantidad especificada en el json de vida, porque daria negativo, simplemente se pone en cero
+				this.setLifepoints(0);
 			}
 		}
 	}
@@ -57,6 +63,9 @@ public class PlantManager extends Planta {
 			//caso negativo
 			if(this.getLifepoints() - this.getWnegativeEffect() >= 0) {
 				this.setLifepoints(this.getLifepoints() - this.getWnegativeEffect());  //que no de en numeros negativos
+			} else {
+				//como no se puede eliminar la cantidad especificada en el json de vida, porque daria negativo, simplemente se pone en cero
+				this.setLifepoints(0);
 			}
 		}
 	}

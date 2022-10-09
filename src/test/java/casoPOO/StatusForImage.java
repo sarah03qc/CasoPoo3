@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 public class StatusForImage {
 	
 	private PlantManager planta;
+	@SuppressWarnings("unused")
 	private ImageDisplay desplegador;
 	
 	StatusForImage(PlantManager pplanta) {
